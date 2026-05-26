@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plano de publicação online | DNA365</title>
+  <style>
+    :root {
+      --ink: #102033;
+      --muted: #637083;
+      --line: #d9e4ef;
+      --soft: #f5f8fb;
+      --panel: #ffffff;
+      --brand: #0f3a68;
+      --blue: #2563eb;
+      --teal: #00857a;
+      --danger: #b42318;
+      --warn: #9a5b00;
+      --ok: #16794c;
+      --shadow: 0 16px 44px rgba(15, 23, 42, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #edf5ff 0, #f8fafc 340px),
+        #f8fafc;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #0f3a68, #2563eb 58%, #00857a);
+      color: #fff;
+      padding: 34px 24px;
+    }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .gear {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.24);
+    }
+    .gear svg { width: 24px; height: 24px; fill: #fff; }
+    h1 {
+      margin: 0;
+      max-width: 840px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 850px;
+      margin: 16px 0 0;
+      color: rgba(255,255,255,.86);
+      font-size: 18px;
+    }
+    main { padding: 28px 0 54px; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: -54px;
+      margin-bottom: 28px;
+    }
+    .metric, .panel, .callout {
+      background: var(--panel);
+      border: 1px solid rgba(217, 228, 239, .95);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .metric { padding: 18px; min-height: 126px; }
+    .metric span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; font-weight: 800; letter-spacing: .04em; }
+    .metric strong { display: block; margin-top: 8px; font-size: 28px; color: var(--brand); }
+    .metric small { display: block; margin-top: 6px; color: var(--muted); }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .panel { padding: 22px; }
+    h2 { margin: 0 0 12px; color: var(--brand); font-size: 24px; }
+    h3 { margin: 18px 0 8px; color: #153b70; font-size: 17px; }
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 0; padding-left: 20px; }
+    li { margin: 7px 0; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: #153b70;
+      border: 1px solid #cfe0fb;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .callout {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-left: 5px solid var(--warn);
+      box-shadow: none;
+      background: #fff8eb;
+      color: #5d3a00;
+    }
+    .callout strong { color: #7a4100; }
+    .callout.ok { border-left-color: var(--ok); background: #ecfdf5; color: #14532d; }
+    .callout.danger { border-left-color: var(--danger); background: #fff1f0; color: #7f1d1d; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    th, td {
+      border-bottom: 1px solid #e6edf5;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef4fb;
+      color: #334155;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .price { font-weight: 800; color: var(--brand); white-space: nowrap; }
+    .muted { color: var(--muted); }
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .steps li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      margin: 0;
+      padding: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .steps li::before {
+      content: counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      font-weight: 800;
+    }
+    footer {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    a { color: #1454bd; }
+    @media (max-width: 920px) {
+      .summary, .grid.two { grid-template-columns: 1fr; }
+      .summary { margin-top: 18px; }
+      header { padding: 26px 0; }
+      .topline { display: block; }
+      .topline div:last-child { margin-top: 10px; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topline">
+        <div class="brand">
+          <span class="gear" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.6 2h2.8l.7 3a7.4 7.4 0 0 1 1.7.7l2.7-1.6 2 2-1.6 2.7c.3.5.5 1.1.7 1.7l3 .7v2.8l-3 .7a7.4 7.4 0 0 1-.7 1.7l1.6 2.7-2 2-2.7-1.6c-.5.3-1.1.5-1.7.7l-.7 3h-2.8l-.7-3a7.4 7.4 0 0 1-1.7-.7l-2.7 1.6-2-2 1.6-2.7a7.4 7.4 0 0 1-.7-1.7l-3-.7v-2.8l3-.7c.2-.6.4-1.2.7-1.7L3.5 6.1l2-2 2.7 1.6c.5-.3 1.1-.5 1.7-.7l.7-3ZM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>
+          </span>
+          DNA365
+        </div>
+        <div>Plano de publicação online | atualizado em 26/05/2026</div>
+      </div>
+      <h1>Como publicar o dashboard online para vários clientes</h1>
+      <p class="lead">Este documento separa o que pode ser feito com o relatório atual e o que precisa mudar para vender acesso a clientes com autenticação real, isolamento de dados e custo mensal previsível.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="summary" aria-label="Resumo financeiro">
+      <div class="metric">
+        <span>Modelo atual</span>
+        <strong>R$ 0/mês</strong>
+        <small>Bom para demonstração, não para dados sensíveis.</small>
+      </div>
+      <div class="metric">
+        <span>MVP seguro</span>
+        <strong>US$ 25-45/mês</strong>
+        <small>Aproximadamente R$ 126-227/mês.</small>
+      </div>
+      <div class="metric">
+        <span>Produção leve</span>
+        <strong>US$ 45-80/mês</strong>
+        <small>Aproximadamente R$ 227-403/mês.</small>
+      </div>
+      <div class="metric">
+        <span>Câmbio usado</span>
+        <strong>~R$ 5,04</strong>
+        <small>Referência USD/BRL consultada em maio/2026.</small>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Diagnóstico do relatório atual</h2>
+      <p>O dashboard publicado hoje é um site estático: HTML, CSS, JavaScript e um arquivo de dados ficam disponíveis no navegador. A tela de login atual serve como barreira visual, mas não protege de fato os dados contra alguém que inspecione o código ou baixe os arquivos do repositório/site.</p>
+      <div class="callout danger">
+        <strong>Decisão importante:</strong> para clientes pagantes ou dados confidenciais, não use GitHub Pages com senha em JavaScript como controle de acesso principal. O correto é ter autenticação no servidor/backend e dados filtrados por cliente antes de chegar ao navegador.
+      </div>
+    </section>
+
+    <section class="grid two" style="margin-top:18px">
+      <div class="panel">
+        <h2>Arquitetura recomendada</h2>
+        <ol class="steps">
+          <li><div><strong>Frontend</strong><br><span class="muted">Publicar a interface do dashboard em Vercel, Cloudflare Pages ou GitHub Pages.</span></div></li>
+          <li><div><strong>Login real</strong><br><span class="muted">Usar Supabase Auth, Auth0, Clerk ou Firebase Auth. Para este caso, Supabase encaixa bem porque já entrega Auth + banco Postgres.</span></div></li>
+          <li><div><strong>Multi-cliente</strong><br><span class="muted">Adicionar `client_id` aos dados e regras de acesso. Cada usuário só enxerga dados do próprio cliente.</span></div></li>
+          <li><div><strong>Banco e políticas</strong><br><span class="muted">Mover `report_data.js` para Postgres/API e aplicar Row Level Security. O navegador nunca deve receber dados de outros clientes.</span></div></li>
+          <li><div><strong>Operação</strong><br><span class="muted">Criar painel administrativo para cadastrar clientes, usuários e atualizar planilhas/relatórios.</span></div></li>
+        </ol>
+      </div>
+
+      <div class="panel">
+        <h2>Recomendação direta</h2>
+        <p><span class="badge">MVP de produção</span></p>
+        <p>Para começar vendendo acesso com baixo custo, use:</p>
+        <ul>
+          <li><strong>Cloudflare Pages ou Vercel</strong> para hospedar a interface.</li>
+          <li><strong>Supabase Pro</strong> para autenticação, banco, backups e políticas por cliente.</li>
+          <li><strong>Domínio próprio</strong> como `dash.dna365.com.br`.</li>
+          <li><strong>Subdomínios ou filtros por cliente</strong>, por exemplo `cliente-a.dna365.com.br` ou login único com seleção automática.</li>
+        </ul>
+        <div class="callout ok">
+          <strong>Custo inicial saudável:</strong> comece mirando US$ 25 a US$ 45/mês antes de gastar com infraestrutura maior.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Estimativa mensal por cenário</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cenário</th>
+            <th>Uso indicado</th>
+            <th>Stack</th>
+            <th>Custo estimado</th>
+            <th>Observação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Demonstração simples</strong></td>
+            <td>Portfólio, prova visual, sem dados sensíveis.</td>
+            <td>GitHub Pages ou Cloudflare Pages, sem backend.</td>
+            <td class="price">US$ 0/mês</td>
+            <td>Não recomendado para SaaS ou dados confidenciais.</td>
+          </tr>
+          <tr>
+            <td><strong>MVP seguro</strong></td>
+            <td>1 a 10 clientes, baixo tráfego, dados privados.</td>
+            <td>Cloudflare Pages + Supabase Pro.</td>
+            <td class="price">US$ 25-35/mês<br><span class="muted">~R$ 126-176</span></td>
+            <td>Supabase Pro cobre Auth, Postgres, backups e limites iniciais bons.</td>
+          </tr>
+          <tr>
+            <td><strong>Produção leve</strong></td>
+            <td>10 a 30 clientes, vários usuários por cliente.</td>
+            <td>Vercel Pro ou Cloudflare Workers Paid + Supabase Pro.</td>
+            <td class="price">US$ 45-80/mês<br><span class="muted">~R$ 227-403</span></td>
+            <td>Boa margem para autenticação, domínio, funções e monitoramento básico.</td>
+          </tr>
+          <tr>
+            <td><strong>Produção com SLA maior</strong></td>
+            <td>Clientes corporativos, auditoria, SSO, compliance.</td>
+            <td>Supabase Team/Enterprise, Vercel/Cloudflare pago, monitoramento.</td>
+            <td class="price">US$ 599+/mês<br><span class="muted">~R$ 3.020+</span></td>
+            <td>Só faz sentido quando contrato e exigência corporativa pagam a conta.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="grid two" style="margin-top:18px">
+      <div class="panel">
+        <h2>O que precisa ser desenvolvido</h2>
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Prioridade</th><th>Esforço</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Login real com recuperação de senha</td><td>Alta</td><td>1-2 dias</td></tr>
+            <tr><td>Cadastro de clientes e usuários</td><td>Alta</td><td>1-2 dias</td></tr>
+            <tr><td>Isolamento por cliente no banco</td><td>Alta</td><td>1-3 dias</td></tr>
+            <tr><td>Migração do `report_data.js` para API/banco</td><td>Alta</td><td>2-5 dias</td></tr>
+            <tr><td>Upload/administração de planilhas</td><td>Média</td><td>3-7 dias</td></tr>
+            <tr><td>Domínio, SSL, deploy e monitoramento</td><td>Média</td><td>1-2 dias</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h2>Regras para vários clientes</h2>
+        <ul>
+          <li>Cada registro de amostra, ativo, navio ou indicador deve ter um `client_id`.</li>
+          <li>Cada usuário deve pertencer a um ou mais clientes.</li>
+          <li>Admins DNA365 podem ver tudo; clientes só veem seus próprios dados.</li>
+          <li>Exportações CSV/Excel também precisam respeitar o filtro do cliente.</li>
+          <li>Backups e logs devem ser habilitados antes de vender acesso recorrente.</li>
+          <li>O repositório público não deve conter planilhas brutas nem dados privados.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Plano de implantação sugerido</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fase</th>
+            <th>Entrega</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fase 1</strong></td>
+            <td>Manter o dashboard visual atual, mas colocar login real e banco por cliente.</td>
+            <td>MVP seguro para primeiros clientes.</td>
+          </tr>
+          <tr>
+            <td><strong>Fase 2</strong></td>
+            <td>Criar painel admin para cadastrar cliente, usuário e carregar dados.</td>
+            <td>Operação sem depender de editar código a cada cliente.</td>
+          </tr>
+          <tr>
+            <td><strong>Fase 3</strong></td>
+            <td>Automatizar atualização do relatório, logs, alertas e faturamento por cliente.</td>
+            <td>Produto SaaS mais escalável.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Fontes de preço consultadas</h2>
+      <ul>
+        <li>GitHub Pages: disponível para repositórios públicos no GitHub Free, mas a própria documentação limita o uso para SaaS/comercial sensível: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">GitHub Pages limits</a>.</li>
+        <li>Vercel: plano Pro anunciado a partir de US$ 20/mês, com limites e uso adicional por métrica: <a href="https://vercel.com/pricing">Vercel Pricing</a>.</li>
+        <li>Supabase: Pro a US$ 25/mês, 100K MAUs incluídos, 8 GB de banco por projeto, 250 GB de bandwidth e backups diários: <a href="https://supabase.com/pricing">Supabase Pricing</a>.</li>
+        <li>Cloudflare Workers: plano pago com cobrança mínima de US$ 5/mês para Workers/Pages Functions e recursos de edge: <a href="https://developers.cloudflare.com/workers/platform/pricing/">Cloudflare Workers Pricing</a>.</li>
+        <li>Câmbio aproximado usado: 1 USD = R$ 5,04, referência Forbes Advisor em 22/05/2026: <a href="https://www.forbes.com/advisor/money-transfer/currency-converter/usd-brl/">USD/BRL Forbes Advisor</a>.</li>
+      </ul>
+      <footer>
+        Estimativas não incluem imposto, mão de obra, domínio, e-mail transacional, suporte, LGPD, contrato/SLA ou custos de tráfego fora dos limites dos planos. Antes de vender acesso, valide o volume real de clientes, usuários mensais, tamanho dos dados e frequência de atualização.
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
