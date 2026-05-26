@@ -1,7 +1,6 @@
 
 (function () {
   const AUTH_USER = "DNA365";
-  const AUTH_PASSWORD = "dash@2026";
   const AUTH_HASH = "d2e219e34d2b118af22bce6ccf2454ffbe145f5bcbbeea2fc37e6ad0807b6903";
   const AUTH_SALT = "oil-report";
   const AUTH_KEY = "dna365_report_authenticated";
@@ -52,7 +51,7 @@
       const user = document.querySelector("[data-login-user]")?.value.trim();
       const password = document.querySelector("[data-login-password]")?.value || "";
       const submitted = await digest(`${user}:${password}:${AUTH_SALT}`);
-      if (user === AUTH_USER && (submitted === AUTH_HASH || (!submitted && password === AUTH_PASSWORD))) {
+      if (user === AUTH_USER && submitted === AUTH_HASH) {
         if (error) error.textContent = "";
         unlockReport();
       } else if (error) {
