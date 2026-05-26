@@ -664,20 +664,41 @@
     .auth-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 22px;
     }
     .auth-mark {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 8px;
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
       color: #fff;
-      background: linear-gradient(135deg, #2563eb, #00857a);
-      font-weight: 800;
-      letter-spacing: 0;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(255,255,255,.34), transparent 28px),
+        linear-gradient(135deg, #0f3a68 0%, #2563eb 52%, #00857a 100%);
+      box-shadow: 0 14px 30px rgba(15, 58, 104, .24);
+      overflow: hidden;
+    }
+    .auth-mark svg {
+      width: 40px;
+      height: 40px;
+      fill: none;
+      display: block;
+    }
+    .auth-mark .mark-ring {
+      stroke: rgba(255,255,255,.90);
+      stroke-width: 3.5;
+    }
+    .auth-mark .mark-path {
+      stroke: #fff;
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .auth-mark .mark-dot {
+      fill: #bff7ef;
     }
     .auth-brand strong {
       display: block;
