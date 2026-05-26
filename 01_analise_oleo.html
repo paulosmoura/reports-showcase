@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análise de óleo | Análise de Óleo</title>
+  <link rel="stylesheet" href="assets/report.css">
+  
+  <script defer src="assets/report_data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body class="auth-locked">
+  <section class="auth-screen" aria-label="Login">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="auth-mark">DNA</span>
+        <div>
+          <strong>DNA365</strong>
+          <span>Acesso ao relatorio corporativo</span>
+        </div>
+      </div>
+      <form class="auth-form" data-login-form>
+        <label>Usuario<input data-login-user type="text" autocomplete="username" required></label>
+        <label>Senha<input data-login-password type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+        <div class="auth-error" data-login-error aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>Análise de Óleo</strong>
+        <span>Relatório corporativo multi-página</span>
+      </div>
+      <nav><a href="index.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg></span>Módulos</a><a href="01_analise_oleo.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Análise de óleo</a><a href="03_carteira.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Carteira e sites</a><a href="04_fluidos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Zm-3 11a3 3 0 0 0 6 0h-2a1 1 0 0 1-2 0H9Z"/></svg></span>Análise dos fluidos</a><a href="05_ativos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Ativos críticos</a><a href="06_diagnosticos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Diagnósticos laboratoriais</a><a href="07_tendencias.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Tendências</a><a href="08_ia.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v1h1a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4h-1v1a3 3 0 0 1-6 0v-1H8a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h1V5a3 3 0 0 1 3-3Zm-4 8v4h8v-4H8Zm1.5 1.5h2v1h-2v-1Zm3 0h2v1h-2v-1Z"/></svg></span>Análise de IA</a><a href="09_apendice.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 1.5V7h2.5L14 4.5ZM8 10h8v1.6H8V10Zm0 4h8v1.6H8V14Z"/></svg></span>Apêndice técnico</a></nav>
+      <div class="meta">
+        <p><b>Desenvolvido por:</b><br>DNA365</p>
+        <p><b>Fonte de dados:</b><br>Sistema da SOTREQ</p>
+        <p><b>Email comercial:</b><br><a href="mailto:ronirjesus@gmail.com">ronirjesus@gmail.com</a></p>
+        <p><b>Gerado em:</b><br>23/05/2026</p>
+      </div>
+      <button type="button" class="logout-button" data-logout>Sair</button>
+    </aside>
+    <main>
+      <header class="page-head">
+        <h1>Análise de óleo</h1>
+        <p class="lead">Visão corporativa da carteira de amostras, criticidade, tendências e prioridades de manutenção.</p>
+      </header>
+      
+      <section class="page-filters" data-page-filter>
+        <div class="filter-title"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Filtros da página</div>
+        <div class="filter-controls">
+          <label class="field">Saúde<select data-page-health><option value="">Todas</option></select></label>
+          <label class="field">Site<select data-page-site><option value="">Todos</option></select></label>
+          <label class="field">Status<select data-page-status><option value="">Todos</option></select></label>
+          <button type="button" data-clear-filters><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Limpar filtros</button>
+        </div>
+      </section>
+    
+      
+    <section class="grid grid-4">
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Amostras de óleo</span>
+      <strong>904</strong>
+      <small>905 registros no workbook</small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Ativos monitorados</span>
+      <strong>207</strong>
+      <small>298 pares ativo-componente</small>
+    </section>
+    
+      
+    <section class="kpi danger">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3Zm1 13h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg></span>Ação requerida</span>
+      <strong>187</strong>
+      <small>20,7%</small>
+    </section>
+    
+      
+    <section class="kpi warn">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3Zm1 13h-2v2h2v-2Zm0-7h-2v5h2V9Z"/></svg></span>Último resultado crítico</span>
+      <strong>54</strong>
+      <small>pares ativo-componente com última condição crítica</small>
+    </section>
+    
+    </section>
+
+    <h2>Leitura executiva</h2>
+    <section class="grid grid-2">
+      <div class="panel">
+        <h3>Distribuição de saúde no histórico</h3>
+        <div class="segmented"><span class="has-tip" data-tooltip="Ação requerida: 187 amostras (20,7%)" style="width:20.69%; background:#b42318"></span><span class="has-tip" data-tooltip="Componente do Monitor: 517 amostras (57,2%)" style="width:57.19%; background:#b7791f"></span><span class="has-tip" data-tooltip="Nenhuma ação é requerida: 91 amostras (10,1%)" style="width:10.07%; background:#16794c"></span><span class="has-tip" data-tooltip="Não Interpretado: 109 amostras (12,1%)" style="width:12.06%; background:#52606d"></span></div><ul class="legend"><li><i style="background:#b42318"></i><b>Ação requerida</b> 187 <em>20,7%</em></li><li><i style="background:#b7791f"></i><b>Componente do Monitor</b> 517 <em>57,2%</em></li><li><i style="background:#16794c"></i><b>Nenhuma ação é requerida</b> 91 <em>10,1%</em></li><li><i style="background:#52606d"></i><b>Não Interpretado</b> 109 <em>12,1%</em></li></ul>
+      </div>
+      <div class="panel">
+        <h3>Janela analisada</h3>
+        <p>Os resultados laboratoriais cobrem <b>01/03/2024</b> a <b>29/01/2026</b>. As datas de coleta variam de <b>06/02/2024</b> a <b>20/01/2026</b>.</p>
+        <p>O prazo amostra-laboratório teve mediana de <b>12,0</b> dias e P90 de <b>25,0</b> dias.</p>
+        <p>Há <b>795</b> amostras com texto interpretativo, base usada para mineração dos diagnósticos recorrentes.</p>
+      </div>
+    </section>
+
+    <section class="callout danger">
+      <b>Prioridade gerencial:</b> 54 pares ativo-componente ainda têm seu último resultado disponível classificado como "Ação requerida". Esses itens devem formar a lista inicial de follow-up, segregando inspeção imediata, filtragem/correção de óleo e reamostragem.
+    </section>
+
+    <h2>Recomendações corporativas</h2>
+    <section class="panel">
+      <ul class="recommendations">
+        <li>Tratar os ativos com recorrência de ação requerida como carteira de risco, não como eventos isolados. Os maiores reincidentes concentram problemas em unidades hidráulicas, mancais e redutores.</li>
+        <li>Separar governança de manutenção em três frentes: contaminação por partículas, alteração de viscosidade e contaminação por água. Essas causas aparecem com alta frequência nos textos interpretativos e possuem ações operacionais diferentes.</li>
+        <li>Controlar a fila de interpretação: em janeiro de 2026 foram registradas 106 amostras, das quais 93 ficaram como "Não Interpretado". A taxa de ação desse mês não deve ser comparada diretamente aos meses fechados.</li>
+        <li>Padronizar metas por família de equipamento e fluido. Sem limites OEM explícitos no workbook, a classificação do laboratório é a fonte primária de criticidade; percentis e ranking relativo servem para priorização, não para condenação técnica definitiva.</li>
+      </ul>
+    </section>
+
+    <h2>Tendência recente</h2>
+    <section class="grid grid-2">
+      <div class="panel">
+        <h3>Amostras mensais</h3>
+        
+    <svg class="sparkline" viewBox="0 0 720 260" role="img" aria-label="Tendência temporal">
+      <rect class="plot-bg" x="54" y="22" width="644" height="186" rx="10"></rect>
+      <line class="grid-line" x1="54" y1="208.0" x2="698" y2="208.0"></line><text class="axis-label" x="44" y="212.0" text-anchor="end">17</text><line class="grid-line" x1="54" y1="161.5" x2="698" y2="161.5"></line><text class="axis-label" x="44" y="165.5" text-anchor="end">39</text><line class="grid-line" x1="54" y1="115.0" x2="698" y2="115.0"></line><text class="axis-label" x="44" y="119.0" text-anchor="end">62</text><line class="grid-line" x1="54" y1="68.5" x2="698" y2="68.5"></line><text class="axis-label" x="44" y="72.5" text-anchor="end">84</text><line class="grid-line" x1="54" y1="22.0" x2="698" y2="22.0"></line><text class="axis-label" x="44" y="26.0" text-anchor="end">106</text>
+      <line class="axis-line" x1="54" y1="208" x2="698" y2="208"></line>
+      <line class="axis-line" x1="54" y1="22" x2="54" y2="208"></line>
+      <polygon class="spark-area" points="54,208 54.0,208.0 103.5,174.6 153.1,197.6 202.6,141.1 252.2,164.1 301.7,191.3 351.2,93.1 400.8,63.8 450.3,99.3 499.8,91.0 549.4,172.5 598.9,153.7 648.5,118.1 698.0,22.0 698,208"></polygon>
+      <polyline class="spark-line" points="54.0,208.0 103.5,174.6 153.1,197.6 202.6,141.1 252.2,164.1 301.7,191.3 351.2,93.1 400.8,63.8 450.3,99.3 499.8,91.0 549.4,172.5 598.9,153.7 648.5,118.1 698.0,22.0"></polyline>
+      <circle class="has-tip spark-point" cx="54.0" cy="208.0" r="4" data-tooltip="12/2024: 17 (1,9%)"></circle><circle class="has-tip spark-point" cx="103.5" cy="174.6" r="4" data-tooltip="01/2025: 33 (3,7%)"></circle><circle class="has-tip spark-point" cx="153.1" cy="197.6" r="4" data-tooltip="02/2025: 22 (2,4%)"></circle><circle class="has-tip spark-point" cx="202.6" cy="141.1" r="4" data-tooltip="03/2025: 49 (5,4%)"></circle><circle class="has-tip spark-point" cx="252.2" cy="164.1" r="4" data-tooltip="04/2025: 38 (4,2%)"></circle><circle class="has-tip spark-point" cx="301.7" cy="191.3" r="4" data-tooltip="05/2025: 25 (2,8%)"></circle><circle class="has-tip spark-point" cx="351.2" cy="93.1" r="4" data-tooltip="06/2025: 72 (8,0%)"></circle><circle class="has-tip spark-point" cx="400.8" cy="63.8" r="4" data-tooltip="07/2025: 86 (9,5%)"></circle><circle class="has-tip spark-point" cx="450.3" cy="99.3" r="4" data-tooltip="08/2025: 69 (7,6%)"></circle><circle class="has-tip spark-point" cx="499.8" cy="91.0" r="4" data-tooltip="09/2025: 73 (8,1%)"></circle><circle class="has-tip spark-point" cx="549.4" cy="172.5" r="4" data-tooltip="10/2025: 34 (3,8%)"></circle><circle class="has-tip spark-point" cx="598.9" cy="153.7" r="4" data-tooltip="11/2025: 43 (4,8%)"></circle><circle class="has-tip spark-point" cx="648.5" cy="118.1" r="4" data-tooltip="12/2025: 60 (6,6%)"></circle><circle class="has-tip spark-point" cx="698.0" cy="22.0" r="4" data-tooltip="01/2026: 106 (11,7%)"></circle>
+      <text class="axis-label x-label" x="54.0" y="245" text-anchor="middle">12/2024</text><text class="axis-label x-label" x="153.1" y="245" text-anchor="middle">02/2025</text><text class="axis-label x-label" x="252.2" y="245" text-anchor="middle">04/2025</text><text class="axis-label x-label" x="351.2" y="245" text-anchor="middle">06/2025</text><text class="axis-label x-label" x="450.3" y="245" text-anchor="middle">08/2025</text><text class="axis-label x-label" x="549.4" y="245" text-anchor="middle">10/2025</text><text class="axis-label x-label" x="648.5" y="245" text-anchor="middle">12/2025</text><text class="axis-label x-label" x="698.0" y="245" text-anchor="middle">01/2026</text>
+    </svg>
+    
+      </div>
+      <div class="panel">
+        <h3>Taxa de ação requerida por site</h3>
+        <div class="bar-list">
+            <div class="bar-row has-tip" data-tooltip="4_BARRO ALTO GOIAS / ANGLO AMERICAN: 27 ações em 46 amostras (58,7%)">
+              <div class="bar-label">4_BARRO ALTO GOIAS / ANGLO AMERICAN</div>
+              <div class="bar-track"><span style="width:58.70%"></span></div>
+              <div class="bar-value">58,7%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 3 ações em 10 amostras (30,0%)">
+              <div class="bar-label">4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:30.00%"></span></div>
+              <div class="bar-value">30,0%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_AABA / ANGLO AMERICAN: 77 ações em 266 amostras (28,9%)">
+              <div class="bar-label">4_AABA / ANGLO AMERICAN</div>
+              <div class="bar-track"><span style="width:28.95%"></span></div>
+              <div class="bar-value">28,9%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 34 ações em 210 amostras (16,2%)">
+              <div class="bar-label">4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:16.19%"></span></div>
+              <div class="bar-value">16,2%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 22 ações em 143 amostras (15,4%)">
+              <div class="bar-label">4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:15.38%"></span></div>
+              <div class="bar-value">15,4%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 9 ações em 89 amostras (10,1%)">
+              <div class="bar-label">4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:10.11%"></span></div>
+              <div class="bar-value">10,1%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 12 ações em 120 amostras (10,0%)">
+              <div class="bar-label">4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:10.00%"></span></div>
+              <div class="bar-value">10,0%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_OFICINA MECÂNICA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 1 ações em 11 amostras (9,1%)">
+              <div class="bar-label">4_OFICINA MECÂNICA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:9.09%"></span></div>
+              <div class="bar-value">9,1%</div>
+            </div>
+            </div>
+      </div>
+    </section>
+    <div class="table-wrap " data-table-wrap><table><thead><tr><th>Mês</th><th>Amostras</th><th>Ações</th><th>Monitor</th><th>Não_interpretado</th><th>Taxa de ação</th></tr></thead><tbody><tr><td>12/2024</td><td>17</td><td>3</td><td>11</td><td>0</td><td>17,6%</td></tr><tr><td>01/2025</td><td>33</td><td>7</td><td>24</td><td>0</td><td>21,2%</td></tr><tr><td>02/2025</td><td>22</td><td>4</td><td>17</td><td>0</td><td>18,2%</td></tr><tr><td>03/2025</td><td>49</td><td>8</td><td>30</td><td>0</td><td>16,3%</td></tr><tr><td>04/2025</td><td>38</td><td>12</td><td>24</td><td>0</td><td>31,6%</td></tr><tr><td>05/2025</td><td>25</td><td>6</td><td>13</td><td>0</td><td>24,0%</td></tr><tr><td>06/2025</td><td>72</td><td>13</td><td>57</td><td>0</td><td>18,1%</td></tr><tr><td>07/2025</td><td>86</td><td>21</td><td>59</td><td>0</td><td>24,4%</td></tr><tr><td>08/2025</td><td>69</td><td>17</td><td>50</td><td>0</td><td>24,6%</td></tr><tr><td>09/2025</td><td>73</td><td>15</td><td>52</td><td>0</td><td>20,5%</td></tr><tr><td>10/2025</td><td>34</td><td>7</td><td>23</td><td>0</td><td>20,6%</td></tr><tr><td>11/2025</td><td>43</td><td>5</td><td>33</td><td>0</td><td>11,6%</td></tr><tr><td>12/2025</td><td>60</td><td>8</td><td>32</td><td>16</td><td>13,3%</td></tr><tr><td>01/2026</td><td>106</td><td>5</td><td>5</td><td>93</td><td>4,7%</td></tr></tbody></table></div>
+    
+      <p class="foot">Relatório gerado automaticamente a partir do workbook original. Indicadores laboratoriais sem limites OEM foram avaliados por classificação do laboratório, recorrência e posição relativa na amostra. <span class="dna365">Desenvolvido pelo time da DNA365.</span></p>
+    </main>
+  </div>
+</body>
+</html>

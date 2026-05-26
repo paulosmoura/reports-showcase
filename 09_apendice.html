@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apêndice técnico | Análise de Óleo</title>
+  <link rel="stylesheet" href="assets/report.css">
+  
+  <script defer src="assets/report_data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body class="auth-locked">
+  <section class="auth-screen" aria-label="Login">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="auth-mark">DNA</span>
+        <div>
+          <strong>DNA365</strong>
+          <span>Acesso ao relatorio corporativo</span>
+        </div>
+      </div>
+      <form class="auth-form" data-login-form>
+        <label>Usuario<input data-login-user type="text" autocomplete="username" required></label>
+        <label>Senha<input data-login-password type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+        <div class="auth-error" data-login-error aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>Análise de Óleo</strong>
+        <span>Relatório corporativo multi-página</span>
+      </div>
+      <nav><a href="index.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg></span>Módulos</a><a href="01_analise_oleo.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Análise de óleo</a><a href="03_carteira.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Carteira e sites</a><a href="04_fluidos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Zm-3 11a3 3 0 0 0 6 0h-2a1 1 0 0 1-2 0H9Z"/></svg></span>Análise dos fluidos</a><a href="05_ativos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Ativos críticos</a><a href="06_diagnosticos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Diagnósticos laboratoriais</a><a href="07_tendencias.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Tendências</a><a href="08_ia.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v1h1a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4h-1v1a3 3 0 0 1-6 0v-1H8a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h1V5a3 3 0 0 1 3-3Zm-4 8v4h8v-4H8Zm1.5 1.5h2v1h-2v-1Zm3 0h2v1h-2v-1Z"/></svg></span>Análise de IA</a><a href="09_apendice.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 1.5V7h2.5L14 4.5ZM8 10h8v1.6H8V10Zm0 4h8v1.6H8V14Z"/></svg></span>Apêndice técnico</a></nav>
+      <div class="meta">
+        <p><b>Desenvolvido por:</b><br>DNA365</p>
+        <p><b>Fonte de dados:</b><br>Sistema da SOTREQ</p>
+        <p><b>Email comercial:</b><br><a href="mailto:ronirjesus@gmail.com">ronirjesus@gmail.com</a></p>
+        <p><b>Gerado em:</b><br>23/05/2026</p>
+      </div>
+      <button type="button" class="logout-button" data-logout>Sair</button>
+    </aside>
+    <main>
+      <header class="page-head">
+        <h1>Apêndice técnico</h1>
+        <p class="lead">Metodologia, estrutura da base e premissas de interpretação.</p>
+      </header>
+      
+      <section class="page-filters" data-page-filter>
+        <div class="filter-title"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Filtros da página</div>
+        <div class="filter-controls">
+          <label class="field">Saúde<select data-page-health><option value="">Todas</option></select></label>
+          <label class="field">Site<select data-page-site><option value="">Todos</option></select></label>
+          <label class="field">Status<select data-page-status><option value="">Todos</option></select></label>
+          <button type="button" data-clear-filters><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Limpar filtros</button>
+        </div>
+      </section>
+    
+      
+    <h2>Escopo e metodologia</h2>
+    <section class="panel">
+      <p>O relatório remove a primeira linha vazia de cada aba e considera como registro útil toda linha com "Nº do laboratório" preenchido. A aba OIL é a base analítica principal porque contém os resultados laboratoriais; a aba OTHER tem apenas um registro e não possui os indicadores físico-químicos e de desgaste.</p>
+      <p>A criticidade foi organizada pela classificação "Saúde" do laboratório. Para ranking técnico adicional foram utilizados recorrência, último resultado disponível, textos interpretativos e percentis internos dos indicadores medidos.</p>
+    </section>
+
+    <h2>Estrutura do workbook</h2>
+    <div class="table-wrap " data-table-wrap><table><thead><tr><th>Aba</th><th>Registros úteis</th><th>Colunas</th></tr></thead><tbody><tr><td>OIL</td><td>904</td><td>291</td></tr><tr><td>OTHER</td><td>1</td><td>34</td></tr></tbody></table></div>
+
+    <h2>Cobertura dos campos principais</h2>
+    <div class="table-wrap " data-table-wrap><table><thead><tr><th>Campo</th><th>Preenchidos</th><th>Cobertura</th></tr></thead><tbody><tr><td>Saúde</td><td>904</td><td>100,0%</td></tr><tr><td>Nº do laboratório</td><td>904</td><td>100,0%</td></tr><tr><td>Data do laboratório</td><td>904</td><td>100,0%</td></tr><tr><td>Data da amostra</td><td>904</td><td>100,0%</td></tr><tr><td>ID do recurso</td><td>904</td><td>100,0%</td></tr><tr><td>Componente</td><td>904</td><td>100,0%</td></tr><tr><td>Site de Trabalho</td><td>904</td><td>100,0%</td></tr><tr><td>Fluid Type</td><td>903</td><td>99,9%</td></tr><tr><td>Fluid Weight</td><td>888</td><td>98,2%</td></tr><tr><td>Status</td><td>904</td><td>100,0%</td></tr><tr><td>Interp. Texto</td><td>795</td><td>87,9%</td></tr><tr><td>Fe</td><td>856</td><td>94,7%</td></tr><tr><td>Cu</td><td>856</td><td>94,7%</td></tr><tr><td>Pb</td><td>856</td><td>94,7%</td></tr><tr><td>Sn</td><td>856</td><td>94,7%</td></tr><tr><td>Cr</td><td>845</td><td>93,5%</td></tr><tr><td>Al</td><td>856</td><td>94,7%</td></tr><tr><td>Ni</td><td>844</td><td>93,4%</td></tr><tr><td>Si</td><td>856</td><td>94,7%</td></tr><tr><td>Na</td><td>855</td><td>94,6%</td></tr><tr><td>K</td><td>812</td><td>89,8%</td></tr><tr><td>B</td><td>856</td><td>94,7%</td></tr><tr><td>H2O</td><td>867</td><td>95,9%</td></tr><tr><td>H2O (ppm)</td><td>0</td><td>0,0%</td></tr><tr><td>Water %</td><td>0</td><td>0,0%</td></tr><tr><td>Glycol</td><td>0</td><td>0,0%</td></tr><tr><td>Fuel</td><td>0</td><td>0,0%</td></tr><tr><td>V40</td><td>815</td><td>90,2%</td></tr><tr><td>V100</td><td>190</td><td>21,0%</td></tr><tr><td>TAN</td><td>791</td><td>87,5%</td></tr><tr><td>TBN</td><td>1</td><td>0,1%</td></tr><tr><td>PQI</td><td>17</td><td>1,9%</td></tr><tr><td>ISO</td><td>880</td><td>97,3%</td></tr><tr><td>4µ</td><td>777</td><td>86,0%</td></tr><tr><td>6µ</td><td>777</td><td>86,0%</td></tr><tr><td>14µ</td><td>777</td><td>86,0%</td></tr><tr><td>21µ</td><td>749</td><td>82,9%</td></tr><tr><td>OXI</td><td>821</td><td>90,8%</td></tr><tr><td>NIT</td><td>821</td><td>90,8%</td></tr><tr><td>SUL</td><td>821</td><td>90,8%</td></tr></tbody></table></div>
+
+    <h2>Premissas de leitura</h2>
+    <section class="panel">
+      <ul class="recommendations">
+        <li>Registros sem ID de recurso ou site foram preservados para não reduzir a evidência histórica.</li>
+        <li>Valores como "H2O", "HBL" ou "IMPUREZAS" em ISO foram mantidos como texto de diagnóstico visual; somente códigos no padrão 00/00/00 foram usados para leitura ISO numérica.</li>
+        <li>Campos duplicados por sufixo, como "Si" e "Si.1", foram mantidos no workbook original; o relatório usa os campos mais consolidados e recorrentes para visão executiva.</li>
+        <li>Este relatório não executa diagnóstico de causa raiz final. Ele prioriza a carteira para inspeção, manutenção, filtragem, correção de fluido e reamostragem.</li>
+      </ul>
+    </section>
+    
+      <p class="foot">Relatório gerado automaticamente a partir do workbook original. Indicadores laboratoriais sem limites OEM foram avaliados por classificação do laboratório, recorrência e posição relativa na amostra. <span class="dna365">Desenvolvido pelo time da DNA365.</span></p>
+    </main>
+  </div>
+</body>
+</html>

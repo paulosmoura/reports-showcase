@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análise de IA | Análise de Óleo</title>
+  <link rel="stylesheet" href="assets/report.css">
+  
+  <script defer src="assets/report_data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body class="auth-locked">
+  <section class="auth-screen" aria-label="Login">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="auth-mark">DNA</span>
+        <div>
+          <strong>DNA365</strong>
+          <span>Acesso ao relatorio corporativo</span>
+        </div>
+      </div>
+      <form class="auth-form" data-login-form>
+        <label>Usuario<input data-login-user type="text" autocomplete="username" required></label>
+        <label>Senha<input data-login-password type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+        <div class="auth-error" data-login-error aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>Análise de Óleo</strong>
+        <span>Relatório corporativo multi-página</span>
+      </div>
+      <nav><a href="index.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg></span>Módulos</a><a href="01_analise_oleo.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Análise de óleo</a><a href="03_carteira.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Carteira e sites</a><a href="04_fluidos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Zm-3 11a3 3 0 0 0 6 0h-2a1 1 0 0 1-2 0H9Z"/></svg></span>Análise dos fluidos</a><a href="05_ativos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Ativos críticos</a><a href="06_diagnosticos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Diagnósticos laboratoriais</a><a href="07_tendencias.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Tendências</a><a href="08_ia.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v1h1a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4h-1v1a3 3 0 0 1-6 0v-1H8a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h1V5a3 3 0 0 1 3-3Zm-4 8v4h8v-4H8Zm1.5 1.5h2v1h-2v-1Zm3 0h2v1h-2v-1Z"/></svg></span>Análise de IA</a><a href="09_apendice.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 1.5V7h2.5L14 4.5ZM8 10h8v1.6H8V10Zm0 4h8v1.6H8V14Z"/></svg></span>Apêndice técnico</a></nav>
+      <div class="meta">
+        <p><b>Desenvolvido por:</b><br>DNA365</p>
+        <p><b>Fonte de dados:</b><br>Sistema da SOTREQ</p>
+        <p><b>Email comercial:</b><br><a href="mailto:ronirjesus@gmail.com">ronirjesus@gmail.com</a></p>
+        <p><b>Gerado em:</b><br>23/05/2026</p>
+      </div>
+      <button type="button" class="logout-button" data-logout>Sair</button>
+    </aside>
+    <main>
+      <header class="page-head">
+        <h1>Análise de IA</h1>
+        <p class="lead">Priorização assistida por IA, clusters de risco e recomendações de follow-up.</p>
+      </header>
+      
+      <section class="page-filters" data-page-filter>
+        <div class="filter-title"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Filtros da página</div>
+        <div class="filter-controls">
+          <label class="field">Saúde<select data-page-health><option value="">Todas</option></select></label>
+          <label class="field">Site<select data-page-site><option value="">Todos</option></select></label>
+          <label class="field">Status<select data-page-status><option value="">Todos</option></select></label>
+          <button type="button" data-clear-filters><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Limpar filtros</button>
+        </div>
+      </section>
+    
+      
+    <section class="grid grid-3">
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Pares priorizados pela IA</span>
+      <strong>298</strong>
+      <small>último resultado por ativo-componente</small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Score máximo</span>
+      <strong>97</strong>
+      <small>criticidade composta</small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg></span>Sinais dominantes</span>
+      <strong>5</strong>
+      <small>clusters técnicos detectados</small>
+    </section>
+    
+    </section>
+
+    <section class="callout warn">
+      Esta página usa uma análise heurística assistida por IA: combina a classificação do laboratório, reincidência histórica, outliers acima do P95 interno e leitura semântica dos textos interpretativos. O resultado serve para priorização corporativa e triagem; a decisão final deve considerar inspeção em campo e limites técnicos do equipamento.
+    </section>
+
+    <h2>Clusters de risco por sinal dominante</h2>
+    <section class="grid grid-2">
+      <div class="panel">
+        <h3>Distribuição dos sinais</h3>
+        <div class="bar-list">
+            <div class="bar-row has-tip" data-tooltip="Partículas / limpeza: 150 pares (50,3%)">
+              <div class="bar-label">Partículas / limpeza</div>
+              <div class="bar-track"><span style="width:100.00%"></span></div>
+              <div class="bar-value">150</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="Sem sinal dominante: 70 pares (23,5%)">
+              <div class="bar-label">Sem sinal dominante</div>
+              <div class="bar-track"><span style="width:46.67%"></span></div>
+              <div class="bar-value">70</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="Desgaste metálico: 37 pares (12,4%)">
+              <div class="bar-label">Desgaste metálico</div>
+              <div class="bar-track"><span style="width:24.67%"></span></div>
+              <div class="bar-value">37</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="Água / umidade: 31 pares (10,4%)">
+              <div class="bar-label">Água / umidade</div>
+              <div class="bar-track"><span style="width:20.67%"></span></div>
+              <div class="bar-value">31</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="Viscosidade: 10 pares (3,4%)">
+              <div class="bar-label">Viscosidade</div>
+              <div class="bar-track"><span style="width:6.67%"></span></div>
+              <div class="bar-value">10</div>
+            </div>
+            </div>
+      </div>
+      <div class="panel">
+        <h3>Resumo por cluster</h3>
+        <div class="table-wrap " data-table-wrap><table><thead><tr><th>Sinal dominante</th><th>Pares</th><th>Ações_históricas</th><th>Score médio</th></tr></thead><tbody><tr><td>Partículas / limpeza</td><td>150</td><td>83</td><td>43</td></tr><tr><td>Sem sinal dominante</td><td>70</td><td>36</td><td>27</td></tr><tr><td>Desgaste metálico</td><td>37</td><td>15</td><td>27</td></tr><tr><td>Água / umidade</td><td>31</td><td>38</td><td>55</td></tr><tr><td>Viscosidade</td><td>10</td><td>15</td><td>59</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <h2>Lista priorizada para follow-up</h2>
+    <div class="table-wrap " data-table-wrap><table><thead><tr><th>Score IA</th><th>Data do laboratório</th><th>Saúde</th><th>ID do recurso</th><th>Componente</th><th>Site de Trabalho</th><th>Amostras</th><th>Ações</th><th>Taxa ação</th><th>Sinal dominante</th><th>Próxima ação sugerida</th></tr></thead><tbody><tr><td>97</td><td>11/12/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>512-UH-037</td><td>UNID. HID. VÁLVULA DESCARGA CALCINADO QUENTE</td><td>4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>9</td><td>6</td><td>66,7%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>96</td><td>11/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>412-FC-001-B1-M4</td><td>MANCAL 4 BASE 1</td><td>4_AABA / ANGLO AMERICAN</td><td>6</td><td>6</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>90</td><td>11/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>641-UH-001</td><td>UNID. HID. PRÉ-AQUECEDOR VERTICAL</td><td>4_AABA / ANGLO AMERICAN</td><td>9</td><td>3</td><td>33,3%</td><td>Viscosidade</td><td>Confirmar fluido aplicado, mistura e condição térmica; corrigir viscosidade ou trocar óleo.</td></tr><tr><td>89</td><td>23/06/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>641-UH-001A</td><td>UNID. HID. VÁLVULA GAVETA MANUT. PANELAS</td><td>4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>7</td><td>3</td><td>42,9%</td><td>Água / umidade</td><td>Verificar vedações, fonte de água, tratar ou substituir óleo e reamostrar.</td></tr><tr><td>88</td><td>29/01/2026</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>412-FC-001-B2-M4</td><td>MANCAL 4, BASE 2</td><td>4_AABA / ANGLO AMERICAN</td><td>4</td><td>3</td><td>75,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>86</td><td>08/05/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>771-UH-003</td><td>CLASSIFICADOR</td><td>4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>7</td><td>3</td><td>42,9%</td><td>Desgaste metálico</td><td>Inspecionar componente, ruído/vibração/carga e correlacionar com tendência de metais.</td></tr><tr><td>85</td><td>11/12/2025</td><td><span class="badge" style="--badge:#b7791f">Componente do Monitor</span></td><td>512-BH-003</td><td>RESERV. UNID. HID. - PERFURATRIZES FORNO 2</td><td>4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>13</td><td>7</td><td>53,8%</td><td>Viscosidade</td><td>Confirmar fluido aplicado, mistura e condição térmica; corrigir viscosidade ou trocar óleo.</td></tr><tr><td>85</td><td>11/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>412-FC-001-B1-M2</td><td>MANCAL 2 BASE 1</td><td>4_AABA / ANGLO AMERICAN</td><td>5</td><td>5</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>84</td><td>07/03/2024</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>511-UH-001</td><td>HIDRÁULICO</td><td>4_BARRO ALTO GOIAS / ANGLO AMERICAN</td><td>4</td><td>4</td><td>100,0%</td><td>Água / umidade</td><td>Verificar vedações, fonte de água, tratar ou substituir óleo e reamostrar.</td></tr><tr><td>84</td><td>23/06/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>641-UH-001B</td><td>UNID. HID. VÁLVULA GAVETA TANQUE DE GRANULAÇÃO</td><td>4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>6</td><td>3</td><td>50,0%</td><td>Água / umidade</td><td>Verificar vedações, fonte de água, tratar ou substituir óleo e reamostrar.</td></tr><tr><td>83</td><td>18/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-MS-002BMC12A</td><td>MANCAL BRITADOR SECUNDÁRIO</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>3</td><td>3</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>83</td><td>13/11/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>431-TC-002</td><td>REDUTOR TC - RD0097</td><td>4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>3</td><td>3</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>83</td><td>11/12/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>522-UH-001</td><td>UNIDADE HIDRÁULICA DESCARGA DO CALCINADO</td><td>4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>9</td><td>4</td><td>44,4%</td><td>Água / umidade</td><td>Verificar vedações, fonte de água, tratar ou substituir óleo e reamostrar.</td></tr><tr><td>80</td><td>11/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>412-FC-001-B2-M1</td><td>MANCAL 1 BASE 2</td><td>4_AABA / ANGLO AMERICAN</td><td>4</td><td>3</td><td>75,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>79</td><td>30/12/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>411-FC-001-B2-M4</td><td>MANCAL 4, BASE 2</td><td>4_AABA / ANGLO AMERICAN</td><td>4</td><td>4</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>79</td><td>18/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-MS-002B</td><td>CAIXA DE TRANSMISSÃO</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>3</td><td>2</td><td>66,7%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>77</td><td>28/03/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-MS-001</td><td>CAIXA DE TRANSMISSÃO</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>2</td><td>2</td><td>100,0%</td><td>Desgaste metálico</td><td>Inspecionar componente, ruído/vibração/carga e correlacionar com tendência de metais.</td></tr><tr><td>76</td><td>18/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-MS-001MC17</td><td>MANCAL BRITADOR PRIMÁRIO - MC17</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>1</td><td>1</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>76</td><td>03/07/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>412-FC-001-B3-M4</td><td>MANCAL 4, BASE 2</td><td>4_AABA / ANGLO AMERICAN</td><td>1</td><td>1</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>73</td><td>18/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-MS-001</td><td>CAIXA DE TRANSMISSÃO - BRITADOR PRIMÁRIO</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>2</td><td>1</td><td>50,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>73</td><td>30/06/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>354-AC-001A</td><td>REDUTOR AC - RD0074</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>2</td><td>1</td><td>50,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>73</td><td>07/03/2024</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>511-UH-037</td><td>HIDRÁULICO</td><td>4_BARRO ALTO GOIAS / ANGLO AMERICAN</td><td>3</td><td>3</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>73</td><td>18/09/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-MS-002BMC12B</td><td>MANCAL BRITADOR SECUNDÁRIO</td><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>3</td><td>3</td><td>100,0%</td><td>Água / umidade</td><td>Verificar vedações, fonte de água, tratar ou substituir óleo e reamostrar.</td></tr><tr><td>72</td><td>20/08/2024</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>411-FC-001</td><td>MANCAL 1 BASE 1</td><td>4_AABA / ANGLO AMERICAN</td><td>2</td><td>2</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr><tr><td>71</td><td>19/05/2025</td><td><span class="badge" style="--badge:#b42318">Ação requerida</span></td><td>321-AS-002</td><td>PLANETARIO</td><td>4_AABA / ANGLO AMERICAN</td><td>1</td><td>1</td><td>100,0%</td><td>Partículas / limpeza</td><td>Executar filtragem, revisar respiros/vedações e confirmar meta ISO do compartimento.</td></tr></tbody></table></div>
+
+    <h2>Como interpretar o score</h2>
+    <section class="panel">
+      <ul class="recommendations">
+        <li>Score alto por "Ação requerida" indica urgência operacional ou necessidade de comprovação de ação já executada.</li>
+        <li>Score alto por reincidência indica ativo com problema recorrente ou ciclo de manutenção/filtragem insuficiente.</li>
+        <li>Score alto por P95 indica leitura extrema dentro da própria carteira, útil quando não há limite OEM no arquivo.</li>
+        <li>Registros "Não Interpretado" mantêm peso intermediário porque podem esconder criticidade ainda não formalizada no laudo.</li>
+      </ul>
+    </section>
+    
+      <p class="foot">Relatório gerado automaticamente a partir do workbook original. Indicadores laboratoriais sem limites OEM foram avaliados por classificação do laboratório, recorrência e posição relativa na amostra. <span class="dna365">Desenvolvido pelo time da DNA365.</span></p>
+    </main>
+  </div>
+</body>
+</html>

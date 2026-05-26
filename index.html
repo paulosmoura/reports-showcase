@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seleção de módulos | Portal de Módulos</title>
+  <link rel="stylesheet" href="assets/report.css">
+  
+  <script defer src="assets/report_data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body class="auth-locked">
+  <section class="auth-screen" aria-label="Login">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="auth-mark">DNA</span>
+        <div>
+          <strong>DNA365</strong>
+          <span>Acesso ao relatorio corporativo</span>
+        </div>
+      </div>
+      <form class="auth-form" data-login-form>
+        <label>Usuario<input data-login-user type="text" autocomplete="username" required></label>
+        <label>Senha<input data-login-password type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+        <div class="auth-error" data-login-error aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>Portal de Módulos</strong>
+        <span>Relatório corporativo DNA365</span>
+      </div>
+      <nav><a href="01_analise_oleo.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Análise de óleo</a><a href="02_mapa_navios.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13 6 5h12l2 8h1l-2.8 5.5A3 3 0 0 1 15.5 20h-7a3 3 0 0 1-2.7-1.5L3 13h1Zm4-6-1.5 6h11L16 7H8Zm1 2h6v2H9V9Z"/></svg></span>Mapa de navios</a></nav>
+      <div class="meta">
+        <p><b>Desenvolvido por:</b><br>DNA365</p>
+        <p><b>Fonte de dados:</b><br>Sistema da SOTREQ</p>
+        <p><b>Email comercial:</b><br><a href="mailto:ronirjesus@gmail.com">ronirjesus@gmail.com</a></p>
+        <p><b>Gerado em:</b><br>23/05/2026</p>
+      </div>
+      <button type="button" class="logout-button" data-logout>Sair</button>
+    </aside>
+    <main>
+      <header class="page-head">
+        <h1>Seleção de módulos</h1>
+        <p class="lead">Escolha o módulo de análise que deseja consultar.</p>
+      </header>
+      
+      
+    <section class="module-grid">
+      <a class="module-card" href="01_analise_oleo.html">
+        <span class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>
+        <div>
+          <h2>Análise de óleo</h2>
+          <p>Indicadores corporativos de saúde dos componentes, ativos críticos, fluidos, diagnósticos, tendências e priorização assistida por IA.</p>
+          <ul>
+            <li>904 amostras avaliadas</li>
+            <li>207 ativos monitorados</li>
+            <li>187 registros com ação requerida</li>
+          </ul>
+        </div>
+      </a>
+      <a class="module-card" href="02_mapa_navios.html">
+        <span class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13 6 5h12l2 8h1l-2.8 5.5A3 3 0 0 1 15.5 20h-7a3 3 0 0 1-2.7-1.5L3 13h1Zm4-6-1.5 6h11L16 7H8Zm1 2h6v2H9V9Z"/></svg></span>
+        <div>
+          <h2>Mapa de navios</h2>
+          <p>Mapa interativo com embarcacoes posicionadas em portos e rotas comerciais plausiveis, usando mapa base OpenStreetMap.</p>
+          <ul>
+            <li>100 navios plotados</li>
+            <li>11 rotas/areas cobertas</li>
+            <li>Tabela exportavel com rota, status e coordenadas</li>
+          </ul>
+        </div>
+      </a>
+    </section>
+
+    
+      <p class="foot">Relatório corporativo com módulos independentes para análise de óleo e monitoramento de navios. <span class="dna365">Desenvolvido pelo time da DNA365.</span></p>
+    </main>
+  </div>
+</body>
+</html>

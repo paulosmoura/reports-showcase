@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carteira e sites | Análise de Óleo</title>
+  <link rel="stylesheet" href="assets/report.css">
+  
+  <script defer src="assets/report_data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body class="auth-locked">
+  <section class="auth-screen" aria-label="Login">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="auth-mark">DNA</span>
+        <div>
+          <strong>DNA365</strong>
+          <span>Acesso ao relatorio corporativo</span>
+        </div>
+      </div>
+      <form class="auth-form" data-login-form>
+        <label>Usuario<input data-login-user type="text" autocomplete="username" required></label>
+        <label>Senha<input data-login-password type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+        <div class="auth-error" data-login-error aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>Análise de Óleo</strong>
+        <span>Relatório corporativo multi-página</span>
+      </div>
+      <nav><a href="index.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg></span>Módulos</a><a href="01_analise_oleo.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Análise de óleo</a><a href="03_carteira.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Carteira e sites</a><a href="04_fluidos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Zm-3 11a3 3 0 0 0 6 0h-2a1 1 0 0 1-2 0H9Z"/></svg></span>Análise dos fluidos</a><a href="05_ativos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Ativos críticos</a><a href="06_diagnosticos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Diagnósticos laboratoriais</a><a href="07_tendencias.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Tendências</a><a href="08_ia.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v1h1a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4h-1v1a3 3 0 0 1-6 0v-1H8a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h1V5a3 3 0 0 1 3-3Zm-4 8v4h8v-4H8Zm1.5 1.5h2v1h-2v-1Zm3 0h2v1h-2v-1Z"/></svg></span>Análise de IA</a><a href="09_apendice.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 1.5V7h2.5L14 4.5ZM8 10h8v1.6H8V10Zm0 4h8v1.6H8V14Z"/></svg></span>Apêndice técnico</a></nav>
+      <div class="meta">
+        <p><b>Desenvolvido por:</b><br>DNA365</p>
+        <p><b>Fonte de dados:</b><br>Sistema da SOTREQ</p>
+        <p><b>Email comercial:</b><br><a href="mailto:ronirjesus@gmail.com">ronirjesus@gmail.com</a></p>
+        <p><b>Gerado em:</b><br>23/05/2026</p>
+      </div>
+      <button type="button" class="logout-button" data-logout>Sair</button>
+    </aside>
+    <main>
+      <header class="page-head">
+        <h1>Carteira e sites</h1>
+        <p class="lead">Distribuição das amostras por site, fluido, viscosidade e status operacional.</p>
+      </header>
+      
+      <section class="page-filters" data-page-filter>
+        <div class="filter-title"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Filtros da página</div>
+        <div class="filter-controls">
+          <label class="field">Saúde<select data-page-health><option value="">Todas</option></select></label>
+          <label class="field">Site<select data-page-site><option value="">Todos</option></select></label>
+          <label class="field">Status<select data-page-status><option value="">Todos</option></select></label>
+          <button type="button" data-clear-filters><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Limpar filtros</button>
+        </div>
+      </section>
+    
+      
+    <section class="grid grid-3">
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Sites com amostras</span>
+      <strong>11</strong>
+      <small>inclui registros sem site informado</small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Tipos de fluido</span>
+      <strong>88</strong>
+      <small>nomes conforme workbook</small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Viscosidades/pesos</span>
+      <strong>15</strong>
+      <small>inclui vazios e valores numéricos</small>
+    </section>
+    
+    </section>
+    <h2>Concentração de ações por site</h2>
+    <section class="grid grid-2">
+      <div class="panel">
+        <h3>Volume absoluto de ações</h3>
+        <div class="bar-list">
+            <div class="bar-row has-tip" data-tooltip="4_AABA / ANGLO AMERICAN: 77 ações (41,2%)">
+              <div class="bar-label">4_AABA / ANGLO AMERICAN</div>
+              <div class="bar-track"><span style="width:100.00%"></span></div>
+              <div class="bar-value">77</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 34 ações (18,2%)">
+              <div class="bar-label">4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:44.16%"></span></div>
+              <div class="bar-value">34</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_BARRO ALTO GOIAS / ANGLO AMERICAN: 27 ações (14,4%)">
+              <div class="bar-label">4_BARRO ALTO GOIAS / ANGLO AMERICAN</div>
+              <div class="bar-track"><span style="width:35.06%"></span></div>
+              <div class="bar-value">27</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 22 ações (11,8%)">
+              <div class="bar-label">4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:28.57%"></span></div>
+              <div class="bar-value">22</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 12 ações (6,4%)">
+              <div class="bar-label">4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:15.58%"></span></div>
+              <div class="bar-value">12</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 9 ações (4,8%)">
+              <div class="bar-label">4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:11.69%"></span></div>
+              <div class="bar-value">9</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 3 ações (1,6%)">
+              <div class="bar-label">4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:3.90%"></span></div>
+              <div class="bar-value">3</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="(sem site): 2 ações (1,1%)">
+              <div class="bar-label">(sem site)</div>
+              <div class="bar-track"><span style="width:2.60%"></span></div>
+              <div class="bar-value">2</div>
+            </div>
+            </div>
+      </div>
+      <div class="panel">
+        <h3>Taxa de ação em sites com 10+ amostras</h3>
+        <div class="bar-list">
+            <div class="bar-row has-tip" data-tooltip="4_BARRO ALTO GOIAS / ANGLO AMERICAN: 27 ações em 46 amostras (58,7%)">
+              <div class="bar-label">4_BARRO ALTO GOIAS / ANGLO AMERICAN</div>
+              <div class="bar-track"><span style="width:58.70%"></span></div>
+              <div class="bar-value">58,7%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 3 ações em 10 amostras (30,0%)">
+              <div class="bar-label">4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:30.00%"></span></div>
+              <div class="bar-value">30,0%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_AABA / ANGLO AMERICAN: 77 ações em 266 amostras (28,9%)">
+              <div class="bar-label">4_AABA / ANGLO AMERICAN</div>
+              <div class="bar-track"><span style="width:28.95%"></span></div>
+              <div class="bar-value">28,9%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 34 ações em 210 amostras (16,2%)">
+              <div class="bar-label">4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:16.19%"></span></div>
+              <div class="bar-value">16,2%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 22 ações em 143 amostras (15,4%)">
+              <div class="bar-label">4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:15.38%"></span></div>
+              <div class="bar-value">15,4%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 9 ações em 89 amostras (10,1%)">
+              <div class="bar-label">4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:10.11%"></span></div>
+              <div class="bar-value">10,1%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 12 ações em 120 amostras (10,0%)">
+              <div class="bar-label">4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:10.00%"></span></div>
+              <div class="bar-value">10,0%</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="4_OFICINA MECÂNICA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL: 1 ações em 11 amostras (9,1%)">
+              <div class="bar-label">4_OFICINA MECÂNICA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</div>
+              <div class="bar-track"><span style="width:9.09%"></span></div>
+              <div class="bar-value">9,1%</div>
+            </div>
+            </div>
+      </div>
+    </section>
+    <div class="table-wrap " data-table-wrap><table><thead><tr><th>Site de Trabalho</th><th>Ação requerida</th><th>Componente do Monitor</th><th>Nenhuma ação é requerida</th><th>Não Interpretado</th><th>Amostras</th><th>Taxa ação</th></tr></thead><tbody><tr><td>4_AABA / ANGLO AMERICAN</td><td>77</td><td>115</td><td>11</td><td>63</td><td>266</td><td>28,9%</td></tr><tr><td>4_PREPARAÇÃO DE CARGA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>34</td><td>154</td><td>5</td><td>17</td><td>210</td><td>16,2%</td></tr><tr><td>4_BARRO ALTO GOIAS / ANGLO AMERICAN</td><td>27</td><td>15</td><td>4</td><td>0</td><td>46</td><td>58,7%</td></tr><tr><td>4_REDUCAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>22</td><td>68</td><td>45</td><td>8</td><td>143</td><td>15,4%</td></tr><tr><td>4_CALCINAÇÃO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>12</td><td>77</td><td>12</td><td>19</td><td>120</td><td>10,0%</td></tr><tr><td>4_REFINO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>9</td><td>66</td><td>14</td><td>0</td><td>89</td><td>10,1%</td></tr><tr><td>4_PULVERIZACAO / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>3</td><td>7</td><td>0</td><td>0</td><td>10</td><td>30,0%</td></tr><tr><td>(sem site)</td><td>2</td><td>4</td><td>0</td><td>1</td><td>7</td><td>28,6%</td></tr><tr><td>4_OFICINA MECÂNICA / ANGLO AMERICAN BARRO ALTO INDUSTRIAL</td><td>1</td><td>10</td><td>0</td><td>0</td><td>11</td><td>9,1%</td></tr><tr><td>3_BARRO ALTO  ANGLO AMERICAN</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0,0%</td></tr><tr><td>4_CARVÃO REDUTOR / ANGLO AMERICAN BARRO ALTO INDUSTIAL</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0,0%</td></tr></tbody></table></div>
+
+    <h2>Carteira de fluidos</h2>
+    <section class="grid grid-2">
+      <div class="panel">
+        <h3>Tipos de fluido mais frequentes</h3>
+        <div class="bar-list">
+            <div class="bar-row has-tip" data-tooltip="LUBRAX GEAR: 259 amostras (28,7%)">
+              <div class="bar-label">LUBRAX GEAR</div>
+              <div class="bar-track"><span style="width:100.00%"></span></div>
+              <div class="bar-value">259</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="LUBRAX HYDRA XP: 105 amostras (11,6%)">
+              <div class="bar-label">LUBRAX HYDRA XP</div>
+              <div class="bar-track"><span style="width:40.54%"></span></div>
+              <div class="bar-value">105</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="MOLYGRAFIT HF: 76 amostras (8,4%)">
+              <div class="bar-label">MOLYGRAFIT HF</div>
+              <div class="bar-track"><span style="width:29.34%"></span></div>
+              <div class="bar-value">76</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="QUINTOLUBRIC B 702: 61 amostras (6,7%)">
+              <div class="bar-label">QUINTOLUBRIC B 702</div>
+              <div class="bar-track"><span style="width:23.55%"></span></div>
+              <div class="bar-value">61</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="QUINTOLUBRIC 888-46 SINTETICO: 40 amostras (4,4%)">
+              <div class="bar-label">QUINTOLUBRIC 888-46 SINTETICO</div>
+              <div class="bar-track"><span style="width:15.44%"></span></div>
+              <div class="bar-value">40</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="LUBRAX GEAR 220: 17 amostras (1,9%)">
+              <div class="bar-label">LUBRAX GEAR 220</div>
+              <div class="bar-track"><span style="width:6.56%"></span></div>
+              <div class="bar-value">17</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="MOLYGAFIT HF: 15 amostras (1,7%)">
+              <div class="bar-label">MOLYGAFIT HF</div>
+              <div class="bar-track"><span style="width:5.79%"></span></div>
+              <div class="bar-value">15</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="QUINTOLUBRIC 888 CST: 14 amostras (1,5%)">
+              <div class="bar-label">QUINTOLUBRIC 888 CST</div>
+              <div class="bar-track"><span style="width:5.41%"></span></div>
+              <div class="bar-value">14</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="LUBRAX GEAR 320: 14 amostras (1,5%)">
+              <div class="bar-label">LUBRAX GEAR 320</div>
+              <div class="bar-track"><span style="width:5.41%"></span></div>
+              <div class="bar-value">14</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="SHC 632 SINTETICO: 13 amostras (1,4%)">
+              <div class="bar-label">SHC 632 SINTETICO</div>
+              <div class="bar-track"><span style="width:5.02%"></span></div>
+              <div class="bar-value">13</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="QUINTOLUBRIC 888: 13 amostras (1,4%)">
+              <div class="bar-label">QUINTOLUBRIC 888</div>
+              <div class="bar-track"><span style="width:5.02%"></span></div>
+              <div class="bar-value">13</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="MOBILGEAR 600 XP: 12 amostras (1,3%)">
+              <div class="bar-label">MOBILGEAR 600 XP</div>
+              <div class="bar-track"><span style="width:4.63%"></span></div>
+              <div class="bar-value">12</div>
+            </div>
+            </div>
+      </div>
+      <div class="panel">
+        <h3>Viscosidades mais frequentes</h3>
+        <div class="bar-list">
+            <div class="bar-row has-tip" data-tooltip="46-ISO: 275 amostras (30,4%)">
+              <div class="bar-label">46-ISO</div>
+              <div class="bar-track"><span style="width:100.00%"></span></div>
+              <div class="bar-value">275</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="220-ISO: 147 amostras (16,3%)">
+              <div class="bar-label">220-ISO</div>
+              <div class="bar-track"><span style="width:53.45%"></span></div>
+              <div class="bar-value">147</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="320-ISO: 100 amostras (11,1%)">
+              <div class="bar-label">320-ISO</div>
+              <div class="bar-track"><span style="width:36.36%"></span></div>
+              <div class="bar-value">100</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="1000-ISO: 100 amostras (11,1%)">
+              <div class="bar-label">1000-ISO</div>
+              <div class="bar-track"><span style="width:36.36%"></span></div>
+              <div class="bar-value">100</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="680-ISO: 82 amostras (9,1%)">
+              <div class="bar-label">680-ISO</div>
+              <div class="bar-track"><span style="width:29.82%"></span></div>
+              <div class="bar-value">82</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="460-ISO: 73 amostras (8,1%)">
+              <div class="bar-label">460-ISO</div>
+              <div class="bar-track"><span style="width:26.55%"></span></div>
+              <div class="bar-value">73</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="68-ISO: 53 amostras (5,9%)">
+              <div class="bar-label">68-ISO</div>
+              <div class="bar-track"><span style="width:19.27%"></span></div>
+              <div class="bar-value">53</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="32-ISO: 28 amostras (3,1%)">
+              <div class="bar-label">32-ISO</div>
+              <div class="bar-track"><span style="width:10.18%"></span></div>
+              <div class="bar-value">28</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="(sem viscosidade): 16 amostras (1,8%)">
+              <div class="bar-label">(sem viscosidade)</div>
+              <div class="bar-track"><span style="width:5.82%"></span></div>
+              <div class="bar-value">16</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="150-ISO: 10 amostras (1,1%)">
+              <div class="bar-label">150-ISO</div>
+              <div class="bar-track"><span style="width:3.64%"></span></div>
+              <div class="bar-value">10</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="1500-ISO: 7 amostras (0,8%)">
+              <div class="bar-label">1500-ISO</div>
+              <div class="bar-track"><span style="width:2.55%"></span></div>
+              <div class="bar-value">7</div>
+            </div>
+            
+            <div class="bar-row has-tip" data-tooltip="40: 7 amostras (0,8%)">
+              <div class="bar-label">40</div>
+              <div class="bar-track"><span style="width:2.55%"></span></div>
+              <div class="bar-value">7</div>
+            </div>
+            </div>
+      </div>
+    </section>
+
+    <h2>Status operacional</h2>
+    <section class="panel">
+      <p>A coluna de status indica a etapa administrativa da amostra. A maior parte está como "Novo", enquanto os registros "Em processo" aparecem concentrados nos dados mais recentes e estão fortemente relacionados ao grupo "Não Interpretado".</p>
+      <div class="table-wrap " data-table-wrap><table><thead><tr><th>Status</th><th>Ação requerida</th><th>Componente do Monitor</th><th>Nenhuma ação é requerida</th><th>Não Interpretado</th></tr></thead><tbody><tr><td>Em processo</td><td>0</td><td>0</td><td>0</td><td>109</td></tr><tr><td>Novo</td><td>187</td><td>517</td><td>91</td><td>0</td></tr></tbody></table></div>
+    </section>
+    
+      <p class="foot">Relatório gerado automaticamente a partir do workbook original. Indicadores laboratoriais sem limites OEM foram avaliados por classificação do laboratório, recorrência e posição relativa na amostra. <span class="dna365">Desenvolvido pelo time da DNA365.</span></p>
+    </main>
+  </div>
+</body>
+</html>

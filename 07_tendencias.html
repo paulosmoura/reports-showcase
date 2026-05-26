@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tendências | Análise de Óleo</title>
+  <link rel="stylesheet" href="assets/report.css">
+  
+  <script defer src="assets/report_data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body class="auth-locked">
+  <section class="auth-screen" aria-label="Login">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <span class="auth-mark">DNA</span>
+        <div>
+          <strong>DNA365</strong>
+          <span>Acesso ao relatorio corporativo</span>
+        </div>
+      </div>
+      <form class="auth-form" data-login-form>
+        <label>Usuario<input data-login-user type="text" autocomplete="username" required></label>
+        <label>Senha<input data-login-password type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+        <div class="auth-error" data-login-error aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>Análise de Óleo</strong>
+        <span>Relatório corporativo multi-página</span>
+      </div>
+      <nav><a href="index.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg></span>Módulos</a><a href="01_analise_oleo.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Análise de óleo</a><a href="03_carteira.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v13H3V7Zm4-4h10l2 4H5l2-4Z"/></svg></span>Carteira e sites</a><a href="04_fluidos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Zm-3 11a3 3 0 0 0 6 0h-2a1 1 0 0 1-2 0H9Z"/></svg></span>Análise dos fluidos</a><a href="05_ativos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Zm-7 8v6l7 4 7-4v-6l-7 4-7-4Z"/></svg></span>Ativos críticos</a><a href="06_diagnosticos.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2l-1 1v4l5 8a2 2 0 0 1-1.7 3H6.7A2 2 0 0 1 5 18l5-8V6L9 5V3Zm2.5 9-3.8 6.2h8.6L12.5 12h-1Z"/></svg></span>Diagnósticos laboratoriais</a><a href="07_tendencias.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Tendências</a><a href="08_ia.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v1h1a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4h-1v1a3 3 0 0 1-6 0v-1H8a4 4 0 0 1-4-4v-4a4 4 0 0 1 4-4h1V5a3 3 0 0 1 3-3Zm-4 8v4h8v-4H8Zm1.5 1.5h2v1h-2v-1Zm3 0h2v1h-2v-1Z"/></svg></span>Análise de IA</a><a href="09_apendice.html" class=""><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 1.5V7h2.5L14 4.5ZM8 10h8v1.6H8V10Zm0 4h8v1.6H8V14Z"/></svg></span>Apêndice técnico</a></nav>
+      <div class="meta">
+        <p><b>Desenvolvido por:</b><br>DNA365</p>
+        <p><b>Fonte de dados:</b><br>Sistema da SOTREQ</p>
+        <p><b>Email comercial:</b><br><a href="mailto:ronirjesus@gmail.com">ronirjesus@gmail.com</a></p>
+        <p><b>Gerado em:</b><br>23/05/2026</p>
+      </div>
+      <button type="button" class="logout-button" data-logout>Sair</button>
+    </aside>
+    <main>
+      <header class="page-head">
+        <h1>Tendências</h1>
+        <p class="lead">Evolução mensal da carteira, ação requerida e tempo de processamento da amostra.</p>
+      </header>
+      
+      <section class="page-filters" data-page-filter>
+        <div class="filter-title"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Filtros da página</div>
+        <div class="filter-controls">
+          <label class="field">Saúde<select data-page-health><option value="">Todas</option></select></label>
+          <label class="field">Site<select data-page-site><option value="">Todos</option></select></label>
+          <label class="field">Status<select data-page-status><option value="">Todos</option></select></label>
+          <button type="button" data-clear-filters><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7v5l-4 2v-7L4 5Z"/></svg></span>Limpar filtros</button>
+        </div>
+      </section>
+    
+      
+    <section class="grid grid-2">
+      <div class="panel">
+        <h3>Volume mensal completo</h3>
+        
+    <svg class="sparkline" viewBox="0 0 720 260" role="img" aria-label="Tendência temporal">
+      <rect class="plot-bg" x="54" y="22" width="644" height="186" rx="10"></rect>
+      <line class="grid-line" x1="54" y1="208.0" x2="698" y2="208.0"></line><text class="axis-label" x="44" y="212.0" text-anchor="end">3</text><line class="grid-line" x1="54" y1="161.5" x2="698" y2="161.5"></line><text class="axis-label" x="44" y="165.5" text-anchor="end">29</text><line class="grid-line" x1="54" y1="115.0" x2="698" y2="115.0"></line><text class="axis-label" x="44" y="119.0" text-anchor="end">54</text><line class="grid-line" x1="54" y1="68.5" x2="698" y2="68.5"></line><text class="axis-label" x="44" y="72.5" text-anchor="end">80</text><line class="grid-line" x1="54" y1="22.0" x2="698" y2="22.0"></line><text class="axis-label" x="44" y="26.0" text-anchor="end">106</text>
+      <line class="axis-line" x1="54" y1="208" x2="698" y2="208"></line>
+      <line class="axis-line" x1="54" y1="22" x2="54" y2="208"></line>
+      <polygon class="spark-area" points="54,208 54.0,153.8 84.7,208.0 115.3,153.8 146.0,197.2 176.7,168.3 207.3,143.0 238.0,200.8 268.7,162.9 299.3,182.7 330.0,153.8 360.7,173.7 391.3,124.9 422.0,144.8 452.7,168.3 483.3,83.4 514.0,58.1 544.7,88.8 575.3,81.6 606.0,152.0 636.7,135.8 667.3,105.1 698.0,22.0 698,208"></polygon>
+      <polyline class="spark-line" points="54.0,153.8 84.7,208.0 115.3,153.8 146.0,197.2 176.7,168.3 207.3,143.0 238.0,200.8 268.7,162.9 299.3,182.7 330.0,153.8 360.7,173.7 391.3,124.9 422.0,144.8 452.7,168.3 483.3,83.4 514.0,58.1 544.7,88.8 575.3,81.6 606.0,152.0 636.7,135.8 667.3,105.1 698.0,22.0"></polyline>
+      <circle class="has-tip spark-point" cx="54.0" cy="153.8" r="4" data-tooltip="03/2024: 33 (3,7%)"></circle><circle class="has-tip spark-point" cx="84.7" cy="208.0" r="4" data-tooltip="04/2024: 3 (0,3%)"></circle><circle class="has-tip spark-point" cx="115.3" cy="153.8" r="4" data-tooltip="06/2024: 33 (3,7%)"></circle><circle class="has-tip spark-point" cx="146.0" cy="197.2" r="4" data-tooltip="07/2024: 9 (1,0%)"></circle><circle class="has-tip spark-point" cx="176.7" cy="168.3" r="4" data-tooltip="08/2024: 25 (2,8%)"></circle><circle class="has-tip spark-point" cx="207.3" cy="143.0" r="4" data-tooltip="09/2024: 39 (4,3%)"></circle><circle class="has-tip spark-point" cx="238.0" cy="200.8" r="4" data-tooltip="10/2024: 7 (0,8%)"></circle><circle class="has-tip spark-point" cx="268.7" cy="162.9" r="4" data-tooltip="11/2024: 28 (3,1%)"></circle><circle class="has-tip spark-point" cx="299.3" cy="182.7" r="4" data-tooltip="12/2024: 17 (1,9%)"></circle><circle class="has-tip spark-point" cx="330.0" cy="153.8" r="4" data-tooltip="01/2025: 33 (3,7%)"></circle><circle class="has-tip spark-point" cx="360.7" cy="173.7" r="4" data-tooltip="02/2025: 22 (2,4%)"></circle><circle class="has-tip spark-point" cx="391.3" cy="124.9" r="4" data-tooltip="03/2025: 49 (5,4%)"></circle><circle class="has-tip spark-point" cx="422.0" cy="144.8" r="4" data-tooltip="04/2025: 38 (4,2%)"></circle><circle class="has-tip spark-point" cx="452.7" cy="168.3" r="4" data-tooltip="05/2025: 25 (2,8%)"></circle><circle class="has-tip spark-point" cx="483.3" cy="83.4" r="4" data-tooltip="06/2025: 72 (8,0%)"></circle><circle class="has-tip spark-point" cx="514.0" cy="58.1" r="4" data-tooltip="07/2025: 86 (9,5%)"></circle><circle class="has-tip spark-point" cx="544.7" cy="88.8" r="4" data-tooltip="08/2025: 69 (7,6%)"></circle><circle class="has-tip spark-point" cx="575.3" cy="81.6" r="4" data-tooltip="09/2025: 73 (8,1%)"></circle><circle class="has-tip spark-point" cx="606.0" cy="152.0" r="4" data-tooltip="10/2025: 34 (3,8%)"></circle><circle class="has-tip spark-point" cx="636.7" cy="135.8" r="4" data-tooltip="11/2025: 43 (4,8%)"></circle><circle class="has-tip spark-point" cx="667.3" cy="105.1" r="4" data-tooltip="12/2025: 60 (6,6%)"></circle><circle class="has-tip spark-point" cx="698.0" cy="22.0" r="4" data-tooltip="01/2026: 106 (11,7%)"></circle>
+      <text class="axis-label x-label" x="54.0" y="245" text-anchor="middle">03/2024</text><text class="axis-label x-label" x="146.0" y="245" text-anchor="middle">07/2024</text><text class="axis-label x-label" x="238.0" y="245" text-anchor="middle">10/2024</text><text class="axis-label x-label" x="330.0" y="245" text-anchor="middle">01/2025</text><text class="axis-label x-label" x="422.0" y="245" text-anchor="middle">04/2025</text><text class="axis-label x-label" x="514.0" y="245" text-anchor="middle">07/2025</text><text class="axis-label x-label" x="606.0" y="245" text-anchor="middle">10/2025</text><text class="axis-label x-label" x="698.0" y="245" text-anchor="middle">01/2026</text>
+    </svg>
+    
+      </div>
+      <div class="panel">
+        <h3>Ações requeridas mensais</h3>
+        
+    <svg class="sparkline" viewBox="0 0 720 260" role="img" aria-label="Tendência temporal">
+      <rect class="plot-bg" x="54" y="22" width="644" height="186" rx="10"></rect>
+      <line class="grid-line" x1="54" y1="208.0" x2="698" y2="208.0"></line><text class="axis-label" x="44" y="212.0" text-anchor="end">0</text><line class="grid-line" x1="54" y1="161.5" x2="698" y2="161.5"></line><text class="axis-label" x="44" y="165.5" text-anchor="end">5</text><line class="grid-line" x1="54" y1="115.0" x2="698" y2="115.0"></line><text class="axis-label" x="44" y="119.0" text-anchor="end">10</text><line class="grid-line" x1="54" y1="68.5" x2="698" y2="68.5"></line><text class="axis-label" x="44" y="72.5" text-anchor="end">16</text><line class="grid-line" x1="54" y1="22.0" x2="698" y2="22.0"></line><text class="axis-label" x="44" y="26.0" text-anchor="end">21</text>
+      <line class="axis-line" x1="54" y1="208" x2="698" y2="208"></line>
+      <line class="axis-line" x1="54" y1="22" x2="54" y2="208"></line>
+      <polygon class="spark-area" points="54,208 54.0,39.7 84.7,208.0 115.3,163.7 146.0,163.7 176.7,181.4 207.3,22.0 238.0,208.0 268.7,181.4 299.3,181.4 330.0,146.0 360.7,172.6 391.3,137.1 422.0,101.7 452.7,154.9 483.3,92.9 514.0,22.0 544.7,57.4 575.3,75.1 606.0,146.0 636.7,163.7 667.3,137.1 698.0,163.7 698,208"></polygon>
+      <polyline class="spark-line" points="54.0,39.7 84.7,208.0 115.3,163.7 146.0,163.7 176.7,181.4 207.3,22.0 238.0,208.0 268.7,181.4 299.3,181.4 330.0,146.0 360.7,172.6 391.3,137.1 422.0,101.7 452.7,154.9 483.3,92.9 514.0,22.0 544.7,57.4 575.3,75.1 606.0,146.0 636.7,163.7 667.3,137.1 698.0,163.7"></polyline>
+      <circle class="has-tip spark-point" cx="54.0" cy="39.7" r="4" data-tooltip="03/2024: 19 (10,2%)"></circle><circle class="has-tip spark-point" cx="84.7" cy="208.0" r="4" data-tooltip="04/2024: 0 (0,0%)"></circle><circle class="has-tip spark-point" cx="115.3" cy="163.7" r="4" data-tooltip="06/2024: 5 (2,7%)"></circle><circle class="has-tip spark-point" cx="146.0" cy="163.7" r="4" data-tooltip="07/2024: 5 (2,7%)"></circle><circle class="has-tip spark-point" cx="176.7" cy="181.4" r="4" data-tooltip="08/2024: 3 (1,6%)"></circle><circle class="has-tip spark-point" cx="207.3" cy="22.0" r="4" data-tooltip="09/2024: 21 (11,2%)"></circle><circle class="has-tip spark-point" cx="238.0" cy="208.0" r="4" data-tooltip="10/2024: 0 (0,0%)"></circle><circle class="has-tip spark-point" cx="268.7" cy="181.4" r="4" data-tooltip="11/2024: 3 (1,6%)"></circle><circle class="has-tip spark-point" cx="299.3" cy="181.4" r="4" data-tooltip="12/2024: 3 (1,6%)"></circle><circle class="has-tip spark-point" cx="330.0" cy="146.0" r="4" data-tooltip="01/2025: 7 (3,7%)"></circle><circle class="has-tip spark-point" cx="360.7" cy="172.6" r="4" data-tooltip="02/2025: 4 (2,1%)"></circle><circle class="has-tip spark-point" cx="391.3" cy="137.1" r="4" data-tooltip="03/2025: 8 (4,3%)"></circle><circle class="has-tip spark-point" cx="422.0" cy="101.7" r="4" data-tooltip="04/2025: 12 (6,4%)"></circle><circle class="has-tip spark-point" cx="452.7" cy="154.9" r="4" data-tooltip="05/2025: 6 (3,2%)"></circle><circle class="has-tip spark-point" cx="483.3" cy="92.9" r="4" data-tooltip="06/2025: 13 (7,0%)"></circle><circle class="has-tip spark-point" cx="514.0" cy="22.0" r="4" data-tooltip="07/2025: 21 (11,2%)"></circle><circle class="has-tip spark-point" cx="544.7" cy="57.4" r="4" data-tooltip="08/2025: 17 (9,1%)"></circle><circle class="has-tip spark-point" cx="575.3" cy="75.1" r="4" data-tooltip="09/2025: 15 (8,0%)"></circle><circle class="has-tip spark-point" cx="606.0" cy="146.0" r="4" data-tooltip="10/2025: 7 (3,7%)"></circle><circle class="has-tip spark-point" cx="636.7" cy="163.7" r="4" data-tooltip="11/2025: 5 (2,7%)"></circle><circle class="has-tip spark-point" cx="667.3" cy="137.1" r="4" data-tooltip="12/2025: 8 (4,3%)"></circle><circle class="has-tip spark-point" cx="698.0" cy="163.7" r="4" data-tooltip="01/2026: 5 (2,7%)"></circle>
+      <text class="axis-label x-label" x="54.0" y="245" text-anchor="middle">03/2024</text><text class="axis-label x-label" x="146.0" y="245" text-anchor="middle">07/2024</text><text class="axis-label x-label" x="238.0" y="245" text-anchor="middle">10/2024</text><text class="axis-label x-label" x="330.0" y="245" text-anchor="middle">01/2025</text><text class="axis-label x-label" x="422.0" y="245" text-anchor="middle">04/2025</text><text class="axis-label x-label" x="514.0" y="245" text-anchor="middle">07/2025</text><text class="axis-label x-label" x="606.0" y="245" text-anchor="middle">10/2025</text><text class="axis-label x-label" x="698.0" y="245" text-anchor="middle">01/2026</text>
+    </svg>
+    
+      </div>
+    </section>
+    <h2>Série mensal</h2>
+    <div class="table-wrap " data-table-wrap><table><thead><tr><th>Mês</th><th>Amostras</th><th>Ações</th><th>Monitor</th><th>Não_interpretado</th><th>Taxa de ação</th></tr></thead><tbody><tr><td>03/2024</td><td>33</td><td>19</td><td>12</td><td>0</td><td>57,6%</td></tr><tr><td>04/2024</td><td>3</td><td>0</td><td>3</td><td>0</td><td>0,0%</td></tr><tr><td>06/2024</td><td>33</td><td>5</td><td>16</td><td>0</td><td>15,2%</td></tr><tr><td>07/2024</td><td>9</td><td>5</td><td>1</td><td>0</td><td>55,6%</td></tr><tr><td>08/2024</td><td>25</td><td>3</td><td>14</td><td>0</td><td>12,0%</td></tr><tr><td>09/2024</td><td>39</td><td>21</td><td>14</td><td>0</td><td>53,8%</td></tr><tr><td>10/2024</td><td>7</td><td>0</td><td>7</td><td>0</td><td>0,0%</td></tr><tr><td>11/2024</td><td>28</td><td>3</td><td>20</td><td>0</td><td>10,7%</td></tr><tr><td>12/2024</td><td>17</td><td>3</td><td>11</td><td>0</td><td>17,6%</td></tr><tr><td>01/2025</td><td>33</td><td>7</td><td>24</td><td>0</td><td>21,2%</td></tr><tr><td>02/2025</td><td>22</td><td>4</td><td>17</td><td>0</td><td>18,2%</td></tr><tr><td>03/2025</td><td>49</td><td>8</td><td>30</td><td>0</td><td>16,3%</td></tr><tr><td>04/2025</td><td>38</td><td>12</td><td>24</td><td>0</td><td>31,6%</td></tr><tr><td>05/2025</td><td>25</td><td>6</td><td>13</td><td>0</td><td>24,0%</td></tr><tr><td>06/2025</td><td>72</td><td>13</td><td>57</td><td>0</td><td>18,1%</td></tr><tr><td>07/2025</td><td>86</td><td>21</td><td>59</td><td>0</td><td>24,4%</td></tr><tr><td>08/2025</td><td>69</td><td>17</td><td>50</td><td>0</td><td>24,6%</td></tr><tr><td>09/2025</td><td>73</td><td>15</td><td>52</td><td>0</td><td>20,5%</td></tr><tr><td>10/2025</td><td>34</td><td>7</td><td>23</td><td>0</td><td>20,6%</td></tr><tr><td>11/2025</td><td>43</td><td>5</td><td>33</td><td>0</td><td>11,6%</td></tr><tr><td>12/2025</td><td>60</td><td>8</td><td>32</td><td>16</td><td>13,3%</td></tr><tr><td>01/2026</td><td>106</td><td>5</td><td>5</td><td>93</td><td>4,7%</td></tr></tbody></table></div>
+
+    <h2>Tempo entre coleta e laboratório</h2>
+    <section class="grid grid-4">
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Mediana</span>
+      <strong>12,0 dias</strong>
+      <small></small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>P90</span>
+      <strong>25,0 dias</strong>
+      <small></small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Máximo</span>
+      <strong>389 dias</strong>
+      <small></small>
+    </section>
+    
+      
+    <section class="kpi ">
+      <span><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16v2H4V18Zm1-3 4-4 3 3 6-8 2 1.5-7.7 10.2-3.2-3.2-2.7 2.7L5 15Z"/></svg></span>Amostras com prazo</span>
+      <strong>904</strong>
+      <small></small>
+    </section>
+    
+    </section>
+    <section class="callout warn">
+      A queda aparente de criticidade em 2026 deve ser interpretada com cuidado porque janeiro tem alta proporção de amostras ainda não interpretadas. Para indicadores executivos, compare meses fechados ou aplique uma regra de congelamento após conclusão da interpretação.
+    </section>
+    
+      <p class="foot">Relatório gerado automaticamente a partir do workbook original. Indicadores laboratoriais sem limites OEM foram avaliados por classificação do laboratório, recorrência e posição relativa na amostra. <span class="dna365">Desenvolvido pelo time da DNA365.</span></p>
+    </main>
+  </div>
+</body>
+</html>
