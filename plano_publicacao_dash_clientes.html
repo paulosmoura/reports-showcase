@@ -320,6 +320,115 @@
       </table>
     </section>
 
+    <section class="panel" style="margin-top:18px">
+      <h2>Cenário maior: 2.000 clientes</h2>
+      <p>Para 2.000 clientes, o ponto crítico deixa de ser somente hospedagem e passa a ser arquitetura multi-tenant, governança de acesso, volume de dados, suporte e observabilidade. A recomendação é usar poucos ambientes compartilhados bem isolados, e não criar uma infraestrutura separada para cada cliente.</p>
+      <div class="callout danger">
+        <strong>Não recomendado:</strong> criar 2.000 projetos Supabase, 2.000 bancos ou 2.000 sites separados. Mesmo que funcione tecnicamente, a operação, backups, deploys e custos ficam difíceis de controlar.
+      </div>
+      <h3>Premissas usadas para estimar</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Variável</th>
+            <th>Conservador</th>
+            <th>Intermediário</th>
+            <th>Alto uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clientes contratantes</td>
+            <td>2.000</td>
+            <td>2.000</td>
+            <td>2.000</td>
+          </tr>
+          <tr>
+            <td>Usuários por cliente</td>
+            <td>3</td>
+            <td>10</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Usuários mensais estimados</td>
+            <td>6.000 MAU</td>
+            <td>20.000 MAU</td>
+            <td>50.000 MAU</td>
+          </tr>
+          <tr>
+            <td>Dados por cliente</td>
+            <td>50 MB</td>
+            <td>200 MB</td>
+            <td>1 GB</td>
+          </tr>
+          <tr>
+            <td>Banco total aproximado</td>
+            <td>100 GB</td>
+            <td>400 GB</td>
+            <td>2 TB</td>
+          </tr>
+          <tr>
+            <td>Chamadas de API/mês</td>
+            <td>1-3 milhões</td>
+            <td>5-15 milhões</td>
+            <td>30-100 milhões</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Arquitetura recomendada para 2.000 clientes</h3>
+      <ul>
+        <li><strong>Multi-tenant pooled:</strong> uma aplicação única, usuários em uma tabela de organizações/clientes e todos os dados com `client_id` obrigatório.</li>
+        <li><strong>RLS no banco:</strong> Row Level Security para garantir que cada cliente veja somente os próprios registros.</li>
+        <li><strong>Sharding quando necessário:</strong> começar com um banco principal e separar por região, porte ou contrato quando o volume crescer.</li>
+        <li><strong>Clientes enterprise dedicados:</strong> apenas clientes grandes ou com exigência contratual ficam em banco/projeto separado.</li>
+        <li><strong>Cache e pré-agregação:</strong> indicadores pesados devem ser pré-calculados; o dashboard não deve recalcular tudo a cada acesso.</li>
+        <li><strong>Fila de processamento:</strong> uploads de planilha e geração de métricas devem rodar em background, com status e logs.</li>
+      </ul>
+
+      <h3>Faixa de custo mensal para 2.000 clientes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Cenário</th>
+            <th>Stack provável</th>
+            <th>Custo mensal estimado</th>
+            <th>Quando usar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pooled enxuto</strong></td>
+            <td>Cloudflare Pages/Workers + Supabase Pro com compute maior + storage adicional.</td>
+            <td class="price">US$ 150-500/mês<br><span class="muted">~R$ 756-2.520</span></td>
+            <td>Bom começo para 2.000 clientes com poucos usuários e dados moderados.</td>
+          </tr>
+          <tr>
+            <td><strong>Produção robusta</strong></td>
+            <td>Cloudflare/Vercel + Postgres gerenciado maior + backups, logs, monitoramento e filas.</td>
+            <td class="price">US$ 800-2.500/mês<br><span class="muted">~R$ 4.032-12.600</span></td>
+            <td>Recomendado quando o dashboard vira operação crítica e tem muitos acessos diários.</td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise</strong></td>
+            <td>Supabase Team/Enterprise ou AWS/GCP/Azure com HA, PITR, SSO, auditoria e suporte.</td>
+            <td class="price">US$ 3.000-10.000+/mês<br><span class="muted">~R$ 15.120-50.400+</span></td>
+            <td>Para contratos grandes, SLA, exigência jurídica/compliance e suporte formal.</td>
+          </tr>
+          <tr>
+            <td><strong>Infra dedicada por cliente</strong></td>
+            <td>Um projeto/banco/site por cliente.</td>
+            <td class="price">US$ 50.000+/mês<br><span class="muted">~R$ 252.000+</span></td>
+            <td>Evitar. Só faz sentido se cada cliente pagar contrato enterprise individual.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout ok">
+        <strong>Conclusão para 2.000 clientes:</strong> a arquitetura mais racional é multi-tenant pooled, com custo inicial realista entre US$ 150 e US$ 500/mês se o uso for moderado. Quando houver tráfego alto, auditoria e suporte corporativo, planeje US$ 800 a US$ 2.500/mês antes de partir para Enterprise.
+      </div>
+    </section>
+
     <section class="grid two" style="margin-top:18px">
       <div class="panel">
         <h2>O que precisa ser desenvolvido</h2>
